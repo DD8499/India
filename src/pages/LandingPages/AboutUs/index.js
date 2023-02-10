@@ -77,6 +77,7 @@ function AboutUs({ state }) {
     <>
       <DefaultNavbar
         routes={routes}
+        state={state}
         // action={{
         //   type: "external",
         //   route: "https://www.creative-tim.com/product/material-kit-react",
@@ -124,7 +125,7 @@ function AboutUs({ state }) {
               Welcome To {state}
             </MKTypography>
             <MKTypography variant="body1" color="white" opacity={0.8} mt={1} mb={3}>
-              Stretches out into the Arabian Sea, with a hint of the desert and with a coastline of 1600 kms long is Gujarat – the home state of Mahatma Gandhi, the Father of Nation
+             the home state of Mahatma Gandhi, the Father of Nation
             </MKTypography>
             <MKButton color="default" sx={{ color: ({ palette: { dark } }) => dark.main }}>
               create account

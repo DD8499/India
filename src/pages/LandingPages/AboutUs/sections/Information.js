@@ -94,7 +94,8 @@ function Information({state}) {
                           justifyContent: 'center',
                           alignItems: 'flex-start',
                           marginLeft : "1px"
-                        }}>
+                        }}
+                        >
                         <li style={{ fontFamily : 'serif'}}><b style={{color : 'black', fontFamily : 'serif'}}>{item?.title}</b>{item?.description}</li>
                       </ul>
                     )
@@ -115,7 +116,8 @@ function Information({state}) {
                           justifyContent: 'center',
                           alignItems: 'flex-start',
                           marginLeft : "10px"
-                        }}>
+                        }}
+                        >
                         <li style={{ fontFamily : 'serif'}}><b style={{color : 'black', fontFamily : 'serif'}}>{item?.title}</b>{item?.description}</li>
                       </ul>
                     )

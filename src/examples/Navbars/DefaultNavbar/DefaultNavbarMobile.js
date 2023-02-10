@@ -32,10 +32,16 @@ import MKTypography from "components/MKTypography";
 // Material Kit 2 React example components
 import DefaultNavbarDropdown from "examples/Navbars/DefaultNavbar/DefaultNavbarDropdown";
 
-function DefaultNavbarMobile({ routes, open }) {
+function DefaultNavbarMobile({ routes, open, setDropdown, openMobileNavbar }) {
+  console.log(setDropdown, 'setDropdown');
+  
   const [collapse, setCollapse] = useState("");
 
   const handleSetCollapse = (name) => (collapse === name ? setCollapse(false) : setCollapse(name));
+  const closeNav = () => {
+    setCollapse(false)
+    openMobileNavbar()
+  }
 
   const renderNavbarItems = routes.map(
     ({ name, icon, collapse: routeCollapses, href, route, collapse: navCollapse }) => (
@@ -68,6 +74,8 @@ function DefaultNavbarMobile({ routes, open }) {
                     {item.collapse.map((el) => (
                       <MKTypography
                         key={el.name}
+                        // onClick={() => setDropdown(null)}
+                        onClick={() => closeNav()}
                         component={el.route ? Link : MuiLink}
                         to={el.route ? el.route : ""}
                         href={el.href ? el.href : ""}
