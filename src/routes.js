@@ -248,7 +248,7 @@ const routes = [
     ],
   },
   {
-    name: "sections",
+    name: "districts",
     icon: <Icon>view_day</Icon>,
     collapse: [
       {

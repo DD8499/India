@@ -77,12 +77,12 @@ function AboutUs({ state }) {
     <>
       <DefaultNavbar
         routes={routes}
-        action={{
-          type: "external",
-          route: "https://www.creative-tim.com/product/material-kit-react",
-          label: "free download",
-          color: "default",
-        }}
+        // action={{
+        //   type: "external",
+        //   route: "https://www.creative-tim.com/product/material-kit-react",
+        //   label: "free download",
+        //   color: "default",
+        // }}
         transparent
         light
       />
@@ -158,7 +158,7 @@ function AboutUs({ state }) {
           boxShadow: ({ boxShadows: { xxl } }) => xxl,
         }}
       >
-        <Information />
+        <Information state={state}/>
         <Team />
         <Featuring />
         <Newsletter />

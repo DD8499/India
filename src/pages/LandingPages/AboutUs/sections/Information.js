@@ -28,9 +28,11 @@ import bgBack from "assets/images/Indian_fort.jpeg";
 import RotatingCardFront from "examples/Cards/RotatingCard/RotatingCardFront";
 import RotatingCard from "examples/Cards/RotatingCard";
 import RotatingCardBack from "examples/Cards/RotatingCard/RotatingCardBack";
+import gujratData from '../../../StatesData/gujrat'
 
 
-function Information() {
+function Information({state}) {
+
   return (
     <MKBox component="section" py={12}>
       <Container>
@@ -80,52 +82,50 @@ function Information() {
               <RotatingCardFront
                 image={bgFront}
                 // icon="touch_app"
-                title={
-                  <>
-                    Top Things To Do In Gujarat
-                    {/* <br />
-                    India */}
-                  </>
-                }
+                title={<span style={{fontFamily : 'cursive', fontSize : '25px'}}>Top Things To Do In {state}</span>}
                 description={
-                  <ul style={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'center',
-                    alignItems: 'flex-start'
-                  }}>
-                    <li><b>Sabarmati Riverfront</b> – Take An Evening Walk</li>
-                    <li><b>Dandi</b> – Explore The History</li>
-                    <li><b>Girnar</b> – Hiking And Temple Visits</li>
-                    <li><b>Bhuj</b> – Visit The White Desert</li>
-                    <li><b>Somnath Beach </b> – Beaching</li>
-                    <li><b>Great Rann Of Kutch </b> –  Witness The Salt Marshes</li>
-                  </ul>
+                  gujratData?.frontData?.map((item, index) => {
+                    return (
+                      <ul
+                        key={index}
+                        style={{
+                          display: 'flex',
+                          flexDirection: 'column',
+                          justifyContent: 'center',
+                          alignItems: 'flex-start',
+                          marginLeft : "1px"
+                        }}>
+                        <li style={{ fontFamily : 'serif'}}><b style={{color : 'black', fontFamily : 'serif'}}>{item?.title}</b>{item?.description}</li>
+                      </ul>
+                    )
+                  })
                 }
               />
               <RotatingCardBack
                 image={bgBack}
-                title="Discover More"
+                title={<span style={{fontFamily : 'cursive', fontSize : '25px'}}>Top Things To Do In {state}</span>}
                 description={
-                  <ul style={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'center',
-                    alignItems: 'flex-start'
-                  }}>
-                    <li><b>Sabarmati Riverfront</b> – Take An Evening Walk</li>
-                    <li><b>Dandi</b> – Explore The History</li>
-                    <li><b>Girnar</b> – Hiking And Temple Visits</li>
-                    <li><b>Bhuj</b> – Visit The White Desert</li>
-                    <li><b>Somnath Beach </b> – Beaching</li>
-                    <li><b>Great Rann Of Kutch </b> –  Witness The Salt Marshes</li>
-                  </ul>
+                  gujratData?.backdata?.map((item, index) => {
+                    return (
+                      <ul
+                        key={index}
+                        style={{
+                          display: 'flex',
+                          flexDirection: 'column',
+                          justifyContent: 'center',
+                          alignItems: 'flex-start',
+                          marginLeft : "10px"
+                        }}>
+                        <li style={{ fontFamily : 'serif'}}><b style={{color : 'black', fontFamily : 'serif'}}>{item?.title}</b>{item?.description}</li>
+                      </ul>
+                    )
+                  })
                 }
-              // action={{
-              //   type: "internal",
-              //   route: "/sections/page-sections/page-headers",
-              //   label: "start with header",
-              // }}
+              action={{
+                type: "internal",
+                route: "#",
+                label: "Thank You !!",
+              }}
               />
             </RotatingCard>
           </Grid>
